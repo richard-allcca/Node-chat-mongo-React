@@ -22,7 +22,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB Connetion Successfull");
+    console.log("DB Connection Successful");
   })
   .catch((err) => {
     console.log(err.message);
@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
     const sendUserSocket = onlineUsers.get(data.to);
     console.log('data.to', data.to); // msg para ->
     if (sendUserSocket) {
-      socket.to(sendUserSocket).emit("msg-recieve", data.msg);
+      socket.to(sendUserSocket).emit("msg-received", data.msg);
     }
   });
 });
